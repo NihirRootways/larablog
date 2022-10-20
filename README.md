@@ -25,9 +25,3 @@ php artisan key:generate
 php artisan migrate
 php artisan db:seed
 ```
-
-## Author
-
--   [Sanish Gurung](https://sanishgurung.com.np)
-
-Contact me, if you need any help.
