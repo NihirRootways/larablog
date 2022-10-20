@@ -7,14 +7,14 @@
 
         <div class="col-12">
             <div class="card">
-                
+
                 <div class="card-body">
                     <div class="card-title d-flex justify-content-between align-items-center">
                         <span class="display-4"> Posts</span>
-                        
+
                         <a href="{{ route('user.posts.create') }}" class="btn btn-primary">Create New</a>
                     </div>
-                    
+
                     <table class="table">
                         <thead>
                             <tr>
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-        
+
         {{ $posts->links() }}
     </div>
 </div>
