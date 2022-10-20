@@ -11,15 +11,12 @@
 
 ## Admin Login Info
 
-email: admin@laravelproject.com
+email: admin@admin.com
 password: admin
 
 ## Steps for Installtion
 
 ```
-git clone https://github.com/sanz/simple-larablog.git simple-larablog
-cd simple-larablog
-cp .env.example .env
 
 // Then set database credentials in .env file
 
