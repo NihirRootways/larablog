@@ -12,33 +12,39 @@
             <ul class="navbar-nav ml-auto">
 
                 @auth
+                @if (auth()->user()->email == 'admin@admin.com')
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ auth()->user()->name }}
                         </a>
-
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
                             <a class="dropdown-item" href="{{ route('profile') }}">Profile</a>
                             <a class="dropdown-item" href="{{ route('user.posts') }}">Posts</a>
                             <a class="dropdown-item" href="{{ route('user.categories') }}">Categories</a>
                             <a class="dropdown-item" href="{{ route('user.comments') }}">Comments</a>
-                            
-
                             <div class="dropdown-divider"></div>
-
-                            <a class="dropdown-item" href="#" 
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                Logout
-                            </a>
-
+                            <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
-                            
                         </div>
                     </li>
+                @else
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ auth()->user()->name }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </div>
+                </li>
+                @endif
                 @else
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">Login</a>

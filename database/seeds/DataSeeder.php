@@ -27,7 +27,7 @@ class DataSeeder extends Seeder
 
         $user = User::create([
             'name'      => 'Admin',
-            'email'     => 'admin@laravelproject.com',
+            'email'     => 'admin@admin.com',
             'password'  => bcrypt('admin')
         ]);
 
